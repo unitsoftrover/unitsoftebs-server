@@ -1,0 +1,65 @@
+[workspace]
+
+[package]
+name = "unitsoftebs-server"
+version = "0.1.0"
+authors = ["robinson"]
+edition = "2018"
+#include = ["src/lib/base/*.rs", "Cargo.toml"]
+
+build = "src/build.rs"    
+[build-dependencies]
+dunce = "0.1.1"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "unitsoftebs-server"
+path = "src/main.rs"
+
+[[bin]]
+name = "connect"
+path = "src/connect.rs"
+
+[[bin]]
+name = "httpclient"
+path = "src/httpclient.rs"
+
+[[bin]]
+name = "batchinsert"
+path = "src/batchinsert.rs"
+
+[dependencies]
+odbc-sys = "0.8.2"
+odbc-safe = "0.5.0"
+log = "0.4.1"
+encoding_rs = "0.8.14"
+doc-comment = "0.3.1"
+odbc = {path = "D:/Rust/odbc-rs-master/"}
+#odbc = "0.17.0"
+env_logger = "0.7"
+
+
+actix-web = "3.0.0"
+dotenv = "0.15"
+failure = "0.1.8"
+futures = "0.3.1"
+serde_derive = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "0.8", features = ["serde", "v4"] }
+v_escape = "0.12"
+v_htmlescape = "0.10.3"
+simd-json = "0.3"
+simd-json-derive = { git = "https://github.com/simd-lite/simd-json-derive.git" , branch = "main"}
+reqwest = "0.9.14"
+tokio = { version = "0.2", features = ["macros"] }
+chrono = "0.4"
+
+[dev-dependencies]
+chrono = "0.4"
+env_logger = "0.7"
+
+[badges]
+travis-ci = { repository = "Koka/odbc-rs", branch = "master" }
+appveyor = { repository = "Koka/odbc-rs", branch = "master" }
+

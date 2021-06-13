@@ -1,0 +1,73 @@
+{ 
+    "version": "0.2.0", 
+    "configurations": [ 
+        { 
+            "name": "unitsoftebs-server", 
+            "preLaunchTask": "build", 
+            "type": "cppvsdbg", 
+            "request": "launch", 
+            "program": "${workspaceFolder}/target/debug/unitsoftebs-server.exe", 
+            "args": [], 
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}", 
+            "environment": [], 
+            "externalConsole":true 
+        }, 
+        { 
+            "name": "connect", 
+            "preLaunchTask": "build", 
+            "type": "cppvsdbg", 
+            "request": "launch", 
+            "program": "${workspaceFolder}/target/debug/connect.exe", 
+            "args": [], 
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}", 
+            "environment": [], 
+            "externalConsole":true 
+        },
+        { 
+            "name": "httpclient", 
+            "preLaunchTask": "build", 
+            "type": "cppvsdbg", 
+            "request": "launch", 
+            "program": "${workspaceFolder}/target/debug/httpclient.exe", 
+            "args": [], 
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}", 
+            "environment": [], 
+            "externalConsole":false 
+        },
+        { 
+            "name": "batchinsert", 
+            "preLaunchTask": "build", 
+            "type": "cppvsdbg", 
+            "request": "launch", 
+            "program": "${workspaceFolder}/target/debug/batchinsert.exe", 
+            "args": [], 
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}", 
+            "environment": [], 
+            "externalConsole":false 
+        },
+        { 
+            "name": "(gdb) 启动", 
+            "type": "cppdbg", 
+            "request": "launch", 
+            "program": "${workspaceFolder}/target/debug/${workspaceFolderBasename}.exe", 
+            "args": [], 
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}", 
+            "environment": [], 
+            "externalConsole": false, 
+            "MIMode": "gdb", 
+            "miDebuggerPath": "这里填GDB所在的目录", 
+            "setupCommands": [ 
+                { 
+                    "description": "为 gdb 启用整齐打印", 
+                    "text": "-enable-pretty-printing", 
+                    "ignoreFailures": true 
+                } 
+            ] 
+        } 
+    ] 
+}
